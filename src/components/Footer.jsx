@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ className }) => {
   return (
-    <footer>
+    <footer className={className}> {/* Applique la classe reçue via props */}
       <p>&copy; 2024 - Mon Application</p>
     </footer>
   );

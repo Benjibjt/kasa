@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ className }) => {
   return (
-    <header>
+    <header className={className}> {/* Applique la classe reçue via props */}
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
