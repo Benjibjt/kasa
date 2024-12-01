@@ -1,0 +1,14 @@
+.outerSquare {
+    width: 200px; /* Dimensions du carré gris */
+    height: 200px;
+    background-color: lightgray; /* Couleur de fond gris */
+    display: flex;
+    justify-content: center; /* Centre horizontalement l'élément enfant */
+    align-items: center; /* Centre verticalement l'élément enfant */
+  }
+  
+.innerSquare {
+    width: 100px; /* Dimensions du carré rouge */
+    height: 100px;
+    background-color: red; 
+  }
