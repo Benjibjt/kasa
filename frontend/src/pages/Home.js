@@ -6,8 +6,10 @@ import Card from '../components/Card';
 const Home = () => {
   return (
     <div className={styles.home}> {/* Applique la classe .home */}
-      <Banner />
-      <Card />
+      <Banner image="/assets/home-banner.png" showOverlay={true}>
+        <h1>Chez vous et partout ailleurs</h1>
+      </Banner> {/* Image spécifique à Home */}
+      <Card />  
     </div>
   );
 };

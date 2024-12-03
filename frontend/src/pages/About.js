@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from '../styles/About.module.css'; // Import du CSS Module
+import Banner from '../components/Banner';
 
 const About = () => {
   return (
-    <div className={styles.container}> {/* Applique la classe .container */}
-      <h1>À propos</h1>
+    <div>
+      <Banner image="/assets/about-banner.png" /> {/* Image spécifique à About */}
     </div>
   );
 };
