@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from '../styles/Card.module.css';
+import styles from '../styles/Card.module.css'; // CSS Module pour le style
 
-const Card = () => {
+const Card = ({ id, title, cover }) => {
   return (
-    <div className={styles.outerSquare}>
-      <div className={styles.innerSquare}></div>
+    <div className={styles.card} id={id}> {/* Conteneur principal */}
+      <img src={cover} alt={title} className={styles.cardImage} /> {/* Image */}
+      <div className={styles.cardTitle}>{title}</div> {/* Titre */}
     </div>
   );
 };

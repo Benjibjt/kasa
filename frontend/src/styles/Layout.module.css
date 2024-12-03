@@ -10,7 +10,10 @@
     padding: 1rem;
     text-align: center;
     display: flex;
+    align-self: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1240px;
   }
 
 ul {
