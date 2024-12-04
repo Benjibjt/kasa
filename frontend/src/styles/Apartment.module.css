@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les collapses */
+    margin-top: 30px;
+    width: 80%;
+    max-width: 1023px;
+    gap: 30px;
+}
+
+.collapseItem {
+    flex: 1; /* Chaque collapse prendra une part égale de l'espace disponible */
+}
+
+.buttonproperty {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    align-self: center;
+    background-color: #FF6060;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: left;
+}
+
+.collapseItem ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.collapseItem li {
+    margin-bottom: 8px; 
+}
