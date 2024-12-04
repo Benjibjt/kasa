@@ -8,9 +8,13 @@
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
-  gap: 1.5rem;
+  gap: 50px;
   width: 100%;
   max-width: 1240px;
-  margin: 0;
-  background-color: lightgray; 
+  margin: 0 auto; /* Centrer le conteneur horizontalement */
+  padding: 50px; /* Ajouter de l'espace autour des bords internes */
+  background-color: lightgray; /* Exemple pour visualiser le conteneur */
+  box-sizing: border-box; /* Inclure le padding dans les dimensions */
+  place-items: center; /* Centre les items dans chaque cellule */
+  border-radius: 25px;
 }

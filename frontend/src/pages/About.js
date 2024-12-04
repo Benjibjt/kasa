@@ -4,7 +4,7 @@ import Banner from '../components/Banner';
 
 const About = () => {
   return (
-    <div>
+    <div className={styles.about}>
       <Banner image="/assets/about-banner.png" /> {/* Image spécifique à About */}
     </div>
   );

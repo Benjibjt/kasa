@@ -31,6 +31,9 @@ li {
 .main {
     flex: 1;
     padding: 2rem;
+    width: 100%;
+    max-width: 1240px;
+    align-self: center;
   }
   
 .footer {
