@@ -1,0 +1,12 @@
+/* Flèche à droite du bouton */
+.arrowIcon {
+    margin-left: 10px; /* Espacement entre le texte et l'icône */
+    transition: transform 0.3s ease; /* Animation douce pour la rotation */
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Classe qui applique la rotation de 180 degrés lorsque la section est dépliée */
+.rotated {
+    transform: rotate(180deg); /* Rotation de 180° */
+  }
