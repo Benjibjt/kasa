@@ -13,23 +13,25 @@ const Apartment = ({ apartmentData = {} }) => {
                 <Carousel images={images} />
             </div>
 
-            <div className={styles.twocollapses}>
-                {/* Section Description */}
-                <div className={styles.collapseItem}>
-                    <CustomCollapse buttonContent="Description" buttonStyle={styles.buttonproperty}>
-                        <p>Contenu de la description de l'appartement.</p>
-                    </CustomCollapse>
-                </div>
+            <div className={styles.propertyinfo}>
+                <div className={styles.twocollapses}>
+                    {/* Section Description */}
+                    <div className={styles.collapseItem}>
+                        <CustomCollapse buttonContent="Description" buttonStyle={styles.buttonproperty}>
+                            <p>Contenu de la description de l'appartement.</p>
+                        </CustomCollapse>
+                    </div>
 
-                {/* Section Équipements */}
-                <div className={styles.collapseItem}>
-                    <CustomCollapse buttonContent="Équipements" buttonStyle={styles.buttonproperty}>
-                        <ul>
-                            <li>Wi-Fi</li>
-                            <li>Machine à laver</li>
-                            <li>Cuisine équipée</li>
-                        </ul>
-                    </CustomCollapse>
+                    {/* Section Équipements */}
+                    <div className={styles.collapseItem}>
+                        <CustomCollapse buttonContent="Équipements" buttonStyle={styles.buttonproperty}>
+                            <ul>
+                                <li>Wi-Fi</li>
+                                <li>Machine à laver</li>
+                                <li>Cuisine équipée</li>
+                            </ul>
+                        </CustomCollapse>
+                    </div>
                 </div>
             </div>
         </div>

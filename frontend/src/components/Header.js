@@ -7,8 +7,8 @@ const Header = ({ className }) => {
       <img src="/assets/LOGO.png" alt="Logo de l'application" className="logo" />
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/">Accueil</Link></li>
+          <li><Link to="/about">A Propos</Link></li>
         </ul>
       </nav>
     </header>

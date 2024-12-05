@@ -16,16 +16,30 @@
     max-width: 1240px;
   }
 
-ul {
+nav {
+  width: 309px;
   display: flex;
-  justify-content: flex-end;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   padding: 0;
   list-style-type: none;
 }
 
 li {
   display: inline;
-  margin-right: 10px;
+  width: 136px;
+  text-align: right;
+}
+
+a {
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none; 
+  color: black; 
 }
   
 .main {
