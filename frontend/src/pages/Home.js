@@ -1,31 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import styles from '../styles/Home.module.css'; // Import du CSS Module
 import Banner from '../components/Banner';
 import Card from '../components/Card';
+import { PropertiesContext } from '../context/PropertiesProvider'; // Import du contexte
 
 const Home = () => {
-  const [properties, setProperties] = useState([]); // État pour stocker les propriétés
-  const [loading, setLoading] = useState(true); // État pour le chargement
-  const [error, setError] = useState(null); // État pour les erreurs
-
-  useEffect(() => {
-    // Appel à l'API pour récupérer les données
-    fetch('http://localhost:8080/api/properties')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Erreur lors du chargement des données');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setProperties(data); // Stocke les données dans l'état
-        setLoading(false); // Fin du chargement
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []); // Le tableau vide [] garantit que l'effet s'exécute une seule fois
+  const { properties, loading, error } = useContext(PropertiesContext); // Accès au contexte
 
   // Gestion des états de chargement et d'erreur
   if (loading) return <div>Chargement...</div>;
@@ -51,4 +31,3 @@ const Home = () => {
 };
 
 export default Home;
-
