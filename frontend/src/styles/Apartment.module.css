@@ -1,10 +1,16 @@
 .container {
     display: flex;
-    justify-content: space-between; /* Espacement égal entre les collapses */
+    flex-direction: column;
     margin-top: 30px;
     width: 80%;
     max-width: 1023px;
     gap: 30px;
+}
+
+.twocollapses {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les collapses */
+    width: 100%;
 }
 
 .collapseItem {
