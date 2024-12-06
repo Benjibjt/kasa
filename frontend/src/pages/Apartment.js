@@ -55,17 +55,19 @@ const Apartment = () => {
       </div>
 
       {/* Section Rating */}
-      <div className={styles.rating}>
-        {Array(5)
+      <div className={styles.ratingContainer}>
+        <div className={styles.rating}>
+          {Array(5)
           .fill()
           .map((_, index) => (
             <span
               key={index}
-              className={index < rating ? styles.starFilled : styles.starEmpty}
+              className={index < apartmentData.rating ? styles.starFilled : styles.starEmpty}
             >
               ★
             </span>
           ))}
+        </div>
       </div>
 
       {/* Sections Description et Équipements */}

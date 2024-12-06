@@ -14,7 +14,7 @@
     margin-bottom: 50px;
 }
 
-.twocollapses {
+.twoCollapses {
     display: flex;
     justify-content: space-between; /* Espacement égal entre les collapses */
     width: 100%;
@@ -24,7 +24,7 @@
     flex: 1; /* Chaque collapse prendra une part égale de l'espace disponible */
 }
 
-.buttonproperty {
+.buttonProperty {
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -47,3 +47,18 @@
 .collapseItem li {
     margin-bottom: 8px; 
 }
+
+.rating {
+    display: flex; /* Les étoiles sont affichées côte à côte */
+    gap: 5px; /* Espacement entre les étoiles */
+  }
+  
+.starFilled {
+    color: #FFD700; /* Jaune pour les étoiles pleines */
+    font-size: 20px; /* Ajustez la taille selon vos besoins */
+  }
+  
+.starEmpty {
+    color: #E0E0E0; /* Gris clair pour les étoiles vides */
+    font-size: 20px; /* Même taille que les étoiles pleines */
+  }
