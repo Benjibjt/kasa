@@ -4,6 +4,8 @@ import CustomCollapse from "../components/CustomCollapse";
 import Carousel from "../components/Carousel"; // Import du composant Carousel
 import styles from "../styles/Apartment.module.css"; // Import du CSS module
 import { PropertiesContext } from "../context/PropertiesProvider"; // Import du contexte
+import NotFound from './NotFound';
+
 
 const Apartment = () => {
   const { id } = useParams(); // Récupère l'ID depuis l'URL
@@ -14,7 +16,7 @@ const Apartment = () => {
 
   // Gestion si l'appartement n'est pas trouvé
   if (!apartmentData) {
-    return <div className={styles.notFound}>Appartement introuvable</div>;
+    return <NotFound />
   }
 
   const {
@@ -69,6 +71,8 @@ const Apartment = () => {
           ))}
         </div>
       </div>
+
+
 
       {/* Sections Description et Équipements */}
       <div className={styles.propertyInfo}>
