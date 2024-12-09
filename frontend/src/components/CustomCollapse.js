@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from '../styles/CustomCollapse.module.css';
+import React, { useState } from "react";
+import styles from "../styles/CustomCollapse.module.css";
 
 function CustomCollapse({ children, buttonContent, buttonStyle }) {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -9,16 +9,22 @@ function CustomCollapse({ children, buttonContent, buttonStyle }) {
     };
 
     return (
-        <div>
+        <div className={styles.customCollapse}>
             <button className={buttonStyle} onClick={toggleCollapse}>
-                {buttonContent || (isCollapsed ? "Masquer" : "Afficher")} {/* Valeur par défaut */}
+                {buttonContent || (isCollapsed ? "Masquer" : "Afficher")}
                 <img
                     src="/assets/arrow_back.svg"
-                     alt="Flèche"
+                    alt="Flèche"
                     className={`${styles.arrowIcon} ${isCollapsed ? styles.rotated : ""}`}
                 />
             </button>
-            {isCollapsed && <div>{children}</div>}
+            <div
+                className={`${styles.collapseContent} ${
+                    isCollapsed ? styles.open : styles.closed
+                }`}
+            >
+                {children}
+            </div>
         </div>
     );
 }

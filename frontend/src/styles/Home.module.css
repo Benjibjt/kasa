@@ -18,3 +18,10 @@
   place-items: center; /* Centre les items dans chaque cellule */
   border-radius: 25px;
 }
+
+/* Le cardsContainer a un fond blanc à partir de 768px */
+@media (max-width: 768px) {
+  .cardsContainer {
+      background-color: white;
+    }
+  }

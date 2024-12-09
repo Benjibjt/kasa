@@ -8,6 +8,51 @@
     gap: 30px;
 }
 
+.mainInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.generalInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    color: #FF6060;
+    font-weight: 500;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #FF6060;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+}
+
+.host {
+    display: flex;
+    flex-direction: column;
+}
+
+.hostInfo {
+    display: flex;
+}
+
+.hostImage {
+    border-radius: 50%;
+}
+
 .propertyinfo {
     width: 100%;
     display: flex;
@@ -37,6 +82,7 @@
     font-weight: 700;
     font-size: 24px;
     text-align: left;
+    border: none;
 }
 
 .collapseItem ul {
@@ -54,7 +100,7 @@
   }
   
 .starFilled {
-    color: #FFD700; /* Jaune pour les étoiles pleines */
+    color: #FF6060; /* Jaune pour les étoiles pleines */
     font-size: 20px; /* Ajustez la taille selon vos besoins */
   }
   

@@ -18,11 +18,8 @@
 .nextButton {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(0, 0, 0, 0);
     border: none;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
     font-size: 18px;
@@ -45,6 +42,7 @@
     bottom: 10px;
     display: flex;
     gap: 8px;
+    color: white;
 }
 
 .indicator {
@@ -57,4 +55,12 @@
 
 .indicator.active {
     background: white;
+}
+
+
+/* Cacher les indicateurs sur les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .indicators {
+        display: none;
+    }
 }

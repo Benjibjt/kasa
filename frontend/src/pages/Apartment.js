@@ -39,7 +39,7 @@ const Apartment = () => {
 
       {/* Informations principales */}
       <div className={styles.mainInfo}>
-        <div>
+        <div className={styles.generalInfo}>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.location}>{location}</p>
           <div className={styles.tags}>
@@ -50,32 +50,32 @@ const Apartment = () => {
             ))}
           </div>
         </div>
-        <div className={styles.hostInfo}>
-          <div className={styles.hostName}>{host.name}</div>
-          <img src={host.picture} alt={host.name} className={styles.hostImage} />
+        <div className={styles.host}>
+          <div className={styles.hostInfo}>
+            <div className={styles.hostName}>{host.name}</div>
+            <img src={host.picture} alt={host.name} className={styles.hostImage} />
+          </div>
+          {/* Section Rating */}
+          <div className={styles.ratingContainer}>
+            <div className={styles.rating}>
+              {Array(5)
+              .fill()
+              .map((_, index) => (
+                <span
+                  key={index}
+                  className={index < apartmentData.rating ? styles.starFilled : styles.starEmpty}
+                >
+                  ★
+                </span>
+              ))}
+          </div>
         </div>
       </div>
-
-      {/* Section Rating */}
-      <div className={styles.ratingContainer}>
-        <div className={styles.rating}>
-          {Array(5)
-          .fill()
-          .map((_, index) => (
-            <span
-              key={index}
-              className={index < apartmentData.rating ? styles.starFilled : styles.starEmpty}
-            >
-              ★
-            </span>
-          ))}
-        </div>
-      </div>
-
+    </div>
 
 
       {/* Sections Description et Équipements */}
-      <div className={styles.propertyInfo}>
+      <div className={styles.propertyinfo}>
         <div className={styles.twoCollapses}>
           <div className={styles.collapseItem}>
             <CustomCollapse buttonContent="Description" buttonStyle={styles.buttonProperty}>

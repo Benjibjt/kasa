@@ -32,12 +32,8 @@
   padding: 0 15px;
   cursor: pointer;
   position: relative;
+  border: none;
 }
 
 
-
-/* Optionnel : Ajouter un survol de bouton */
-.aboutcollapse:hover {
-  background-color: #e04f4f; /* Teinte plus foncée au survol */
-}
 
