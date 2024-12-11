@@ -2,8 +2,8 @@
 .arrowIcon {
   margin-left: 10px; /* Espacement entre le texte et l'icône */
   transition: transform 0.3s ease; /* Animation douce pour la rotation */
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
 }
 
 /* Classe qui applique la rotation de 180 degrés lorsque la section est dépliée */
@@ -14,9 +14,8 @@ transform: rotate(-180deg); /* Rotation dans l'autre sens */
 
 /* Contenu du collapse */
 .collapseContent {
-max-height: 0;
 overflow: hidden;
-background-color: #f5f5f5; /* Fond gris clair */
+background-color: #F6F6F6; /* Fond gris clair */
 transition: max-height 0.3s ease, padding 0.3s ease; /* Animation fluide */
 padding: 0 10px; /* Padding par défaut */
 opacity: 0; /* Transparence par défaut */
@@ -25,8 +24,8 @@ transition: opacity 0.3s ease, max-height 0.3s ease;
 
 /* État ouvert */
 .collapseContent.open {
-max-height: 500px; /* Ajustez en fonction de votre contenu */
-padding: 10px; /* Ajoute du padding lors du déploiement */
+min-height: 182px;
+padding: 20px; /* Ajoute du padding lors du déploiement */
 opacity: 1; /* Rétablit la visibilité */
 }
 

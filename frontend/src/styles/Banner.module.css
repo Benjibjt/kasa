@@ -1,38 +1,44 @@
 .banner {
-    width: 100%;
-    max-width: 1240px;
-    height: 300px;
-    border-radius: 10px;
-    background-color: #f0f0f0; /* Gris clair par défaut */
-    background-size: cover;  /* Ajuste l'image pour couvrir tout le rectangle */
-    background-position: center;  /* Centre l'image */
-    background-repeat: no-repeat; /* Évite la répétition de l'image */
-    position: relative; /* Nécessaire pour positionner le texte */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Assure qu'aucun contenu ne dépasse */
-  }
+  width: 100%;
+  max-width: 1240px;
+  height: 223px;
+  border-radius: 10px;
+  background-color: #f0f0f0; /* Gris clair par défaut */
+  background-size: cover;  /* Ajuste l'image pour couvrir tout le rectangle */
+  background-position: center;  /* Centre l'image */
+  background-repeat: no-repeat; /* Évite la répétition de l'image */
+  position: relative; /* Nécessaire pour positionner le texte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Assure qu'aucun contenu ne dépasse */
+}
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 .content {
-    color: white;       /* Couleur du texte */
-    font-size: 2rem;    /* Taille du texte */
-    text-align: center; /* Centre le texte */
-    padding: 10px 20px; /* Espacement interne */
-    z-index: 1;         /* Assure que le texte est au-dessus du fond */
-  }
+  color: white;       /* Couleur du texte */
+  text-align: center; /* Centre le texte */
+  padding: 10px 20px; /* Espacement interne */
+  z-index: 1;         /* Assure que le texte est au-dessus du fond */
+}
 
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+.banner {
+  height: 111px;
+}
+}

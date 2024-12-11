@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className={styles.home}> {/* Applique la classe .home */}
       <Banner image="/assets/home-banner.png" showOverlay={true}>
-        <h1>Chez vous et partout ailleurs</h1>
+        <h1>Chez vous, partout et ailleurs</h1>
       </Banner> {/* Image spécifique à Home */}
       <div className={styles.cardsContainer}> {/* Conteneur pour les cartes */}
         {loading ? (
@@ -42,3 +42,7 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+

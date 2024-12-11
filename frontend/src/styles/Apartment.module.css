@@ -19,6 +19,11 @@
     width: 100%;
 }
 
+.generalInfo p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .title {
     color: #FF6060;
     font-weight: 500;
@@ -27,6 +32,7 @@
 .tags {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -36,8 +42,12 @@
     color: white;
     background-color: #FF6060;
     border-radius: 10px;
-    width: 150px;
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
     height: 25px;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .host {
@@ -47,16 +57,31 @@
 
 .hostInfo {
     display: flex;
+    width: 167px;
+    height: 64px;
+}
+
+.hostName {
+    width: 93px;
+    height: 52px;
+    text-align: end;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FF6060;
+    align-self: center;
+    margin-right: 10px;
 }
 
 .hostImage {
     border-radius: 50%;
+    width: 64px;
+    height: 64px;
 }
 
 .propertyinfo {
     width: 100%;
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .twoCollapses {
@@ -66,15 +91,17 @@
 }
 
 .collapseItem {
-    flex: 1; /* Chaque collapse prendra une part égale de l'espace disponible */
+/*  flex: 1; /* Chaque collapse prendra une part égale de l'espace disponible */
+    width: 47%;
+    max-width: 582px;
 }
 
 .buttonProperty {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 54px;
+    height: 52px;
     justify-self: center;
     background-color: #FF6060;
     color: white;
@@ -85,6 +112,14 @@
     border: none;
 }
 
+.buttonDescription {
+    justify-self: flex-start;
+}
+
+.buttonEquipments {
+    justify-self: flex-end;
+}
+
 .collapseItem ul {
     display: flex;
     flex-direction: column;
@@ -92,19 +127,91 @@
 
 .collapseItem li {
     margin-bottom: 8px; 
+    text-align: left;
 }
 
 .rating {
     display: flex; /* Les étoiles sont affichées côte à côte */
     gap: 5px; /* Espacement entre les étoiles */
+    margin-top: 21px;
+    height: 36px;
   }
   
 .starFilled {
-    color: #FF6060; /* Jaune pour les étoiles pleines */
-    font-size: 20px; /* Ajustez la taille selon vos besoins */
+    color: #FF6060;
+    font-size: 36px; 
+    align-self: center;
   }
   
 .starEmpty {
-    color: #E0E0E0; /* Gris clair pour les étoiles vides */
-    font-size: 20px; /* Même taille que les étoiles pleines */
+    color: #E0E0E0; 
+    font-size: 36px;
+    align-self: center;
   }
+
+
+/* Affichage responsive */
+@media (max-width: 768px) {
+    .mainInfo {
+        flex-direction: column;
+    }
+
+    .generalInfo p {
+        font-size: 14px;
+    }
+
+    .host {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .hostInfo {
+        width: 135.5px;
+        height: 33px;
+        margin-top: 16px;
+    }
+
+    .hostName {
+        font-size: 12px;
+        width: 70px;
+        height: 33px;
+    }
+
+    .hostImage {
+        width: 32px;
+        height: 32px;
+    }
+
+    .rating {
+        height: 18px;
+      }
+
+    .starFilled {
+        font-size: 18px; 
+        width: 18px;
+      }
+      
+    .starEmpty {
+        font-size: 18px; 
+        width: 18px;
+      }
+      
+
+    .twoCollapses {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .collapseItem {
+        align-self: center; 
+        width: 100%;
+        max-width: 768px;
+    }
+
+
+    .buttonProperty {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    }

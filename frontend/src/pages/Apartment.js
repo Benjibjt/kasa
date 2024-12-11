@@ -58,15 +58,15 @@ const Apartment = () => {
           {/* Section Rating */}
           <div className={styles.ratingContainer}>
             <div className={styles.rating}>
-              {Array(5)
+            {Array(5)
               .fill()
               .map((_, index) => (
-                <span
+                <img
                   key={index}
+                  src={index < apartmentData.rating ? '/assets/star-filled.svg' : '/assets/star-empty.svg'}
+                  alt={index < apartmentData.rating ? 'Star filled' : 'Star empty'}
                   className={index < apartmentData.rating ? styles.starFilled : styles.starEmpty}
-                >
-                  ★
-                </span>
+                  />
               ))}
           </div>
         </div>
@@ -78,12 +78,12 @@ const Apartment = () => {
       <div className={styles.propertyinfo}>
         <div className={styles.twoCollapses}>
           <div className={styles.collapseItem}>
-            <CustomCollapse buttonContent="Description" buttonStyle={styles.buttonProperty}>
+            <CustomCollapse buttonContent="Description" buttonStyle={`${styles.buttonProperty} ${styles.buttonDescription}`}>
               <p>{description}</p>
             </CustomCollapse>
           </div>
           <div className={styles.collapseItem}>
-            <CustomCollapse buttonContent="Équipements" buttonStyle={styles.buttonProperty}>
+            <CustomCollapse buttonContent="Équipements" buttonStyle={`${styles.buttonProperty} ${styles.buttonEquipments}`}>
               <ul>
                 {equipments.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -98,5 +98,8 @@ const Apartment = () => {
 };
 
 export default Apartment;
+
+
+
 
 
