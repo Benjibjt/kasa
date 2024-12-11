@@ -5,12 +5,13 @@
     margin-top: 30px;
     width: 100%;
     max-width: 1240px;
-    gap: 30px;
+    gap: 24px;
 }
 
 .mainInfo {
     display: flex;
     flex-direction: row;
+    margin-top: 6px;
 }
 
 .generalInfo {
@@ -22,11 +23,16 @@
 .generalInfo p {
     font-size: 18px;
     font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .title {
     color: #FF6060;
     font-weight: 500;
+    font-size: 36px;
+    margin: 0;
+    height: 51px;
 }
 
 .tags {
