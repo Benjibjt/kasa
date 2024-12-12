@@ -45,10 +45,16 @@ text-align: right;
 
 a {
 font-weight: 500;
+/*  font-family: Montserrat, Arial; */
 font-size: 24px;
-text-decoration: none; 
 color: black; 
+text-decoration: none;
 }
+
+.activeLink {
+text-decoration: underline;
+}
+
 
 .main {
 flex: 1;
@@ -66,9 +72,9 @@ text-align: center;
 width: 100%;
 max-width: 1440px;
 height: 209px;
-/*  align-content: center; */
 font-weight: 500;
 font-size: 24px;
+font-family: Montserrat, Arial;
 }
 
 .footer img {
@@ -78,6 +84,30 @@ margin-top: 66px;
 .footer p {
 margin-top: 30px;
 }
+
+
+/* Animation de lumière bleue */
+@keyframes flashBlue {
+0% {
+  box-shadow: 0 0 0 rgba(0, 0, 255, 0.5);
+}
+50% {
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+100% {
+  box-shadow: 0 0 0 rgba(0, 0, 255, 0.5);
+}
+}
+
+/* Classe pour l'animation */
+.flashAnimation {
+animation: flashBlue 0.5s ease-in-out;
+transition: box-shadow 0.5s ease-in-out;
+}
+
+
+
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

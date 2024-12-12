@@ -4,6 +4,7 @@
   transition: transform 0.3s ease; /* Animation douce pour la rotation */
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 
 /* Classe qui applique la rotation de 180 degrés lorsque la section est dépliée */
@@ -24,9 +25,10 @@ transition: opacity 0.3s ease, max-height 0.3s ease;
 
 /* État ouvert */
 .collapseContent.open {
-min-height: 182px;
+/*  min-height: 182px; */
 padding: 20px; /* Ajoute du padding lors du déploiement */
 opacity: 1; /* Rétablit la visibilité */
+font-size: 18px;
 }
 
 /* État fermé */
@@ -34,4 +36,13 @@ opacity: 1; /* Rétablit la visibilité */
 max-height: 0;
 padding: 0 10px; /* Padding réduit lorsque fermé */
 opacity: 0; /* Cache le contenu */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+.collapseContent.open {
+    font-size: 12px;
+  }
+
 }

@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 8px;
+  font-family: Montserrat, Arial;
 }
 
 .collapsegroup {
@@ -14,6 +15,10 @@
   width: 80%;
   max-width: 1023px;
   gap: 30px;
+}
+
+.collapsegroup p {
+  margin: 0;
 }
 
 /* Style du bouton avec flèche */
@@ -31,11 +36,10 @@
   font-size: 24px;
   text-align: left;
   padding: 0 15px;
-  cursor: pointer;
+/*  cursor: pointer; */
   position: relative;
   border: none;
 }
-
 
 
 /* Optionnel : Ajouter un survol de bouton */
