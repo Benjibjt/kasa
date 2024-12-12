@@ -37,6 +37,11 @@
   font-family: Montserrat, Arial;
   }
 
+/* Classe spécifique qui s'applique quand il y a une erreur */
+.cardTitleError {
+  width: 100px; /* Change la largeur en cas d'erreur */
+}
+
 
 /* Animation de lumière bleue autour de l'élément card */
 @keyframes flashBlue {
@@ -89,5 +94,9 @@
 
   .cardTitle {
     width: 80%;
+  }
+
+  .cardTitleError {
+    width: 100px; /* Change la largeur en cas d'erreur */
   }
 }

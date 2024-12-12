@@ -27,6 +27,9 @@
   border-radius: 25px;
 }
 
+.cardsContainer.errorMode > :nth-child(n+4) {
+  display: block; /* Masquer les cartes au-delà de la troisième */
+}
 
 /* Le cardsContainer a un fond blanc à partir de 768px */
 @media (max-width: 768px) {
@@ -34,9 +37,15 @@
       background-color: white;
       padding: 0%;
     }
+  
+  .cardsContainer.errorMode > :nth-child(n+4) {
+      display: none ; /* Réafficher toutes les cartes en mode desktop */
+    }
 
   .home h1 {
       font-size: 24px;
       text-align: left;
     }
+
+  
   }
