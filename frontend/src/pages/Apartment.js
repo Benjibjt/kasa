@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import CustomCollapse from "../components/CustomCollapse";
 import Carousel from "../components/Carousel"; // Import du composant Carousel
@@ -6,17 +6,19 @@ import styles from "../styles/Apartment.module.css"; // Import du CSS module
 import { PropertiesContext } from "../context/PropertiesProvider"; // Import du contexte
 import NotFound from './NotFound';
 
-
 const Apartment = () => {
   const { id } = useParams(); // Récupère l'ID depuis l'URL
   const { properties } = useContext(PropertiesContext); // Accède aux propriétés via le contexte
+
+  // Initialisation des hooks
+  const [activeCollapse, setActiveCollapse] = useState(null);
 
   // Trouver les données de l'appartement correspondant
   const apartmentData = properties.find((property) => property.id === id);
 
   // Gestion si l'appartement n'est pas trouvé
   if (!apartmentData) {
-    return <NotFound />
+    return <NotFound />;
   }
 
   const {
@@ -29,6 +31,10 @@ const Apartment = () => {
     description,
     equipments,
   } = apartmentData;
+
+  const handleCollapseToggle = (collapseId) => {
+    setActiveCollapse((prevState) => (prevState === collapseId ? null : collapseId));
+  };
 
   return (
     <div className={styles.container}>
@@ -58,32 +64,41 @@ const Apartment = () => {
           {/* Section Rating */}
           <div className={styles.ratingContainer}>
             <div className={styles.rating}>
-            {Array(5)
-              .fill()
-              .map((_, index) => (
-                <img
-                  key={index}
-                  src={index < apartmentData.rating ? '/assets/star-filled.svg' : '/assets/star-empty.svg'}
-                  alt={index < apartmentData.rating ? 'Star filled' : 'Star empty'}
-                  className={index < apartmentData.rating ? styles.starFilled : styles.starEmpty}
+              {Array(5)
+                .fill()
+                .map((_, index) => (
+                  <img
+                    key={index}
+                    src={index < rating ? '/assets/star-filled.svg' : '/assets/star-empty.svg'}
+                    alt={index < rating ? 'Star filled' : 'Star empty'}
+                    className={index < rating ? styles.starFilled : styles.starEmpty}
                   />
-              ))}
+                ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
 
       {/* Sections Description et Équipements */}
       <div className={styles.propertyinfo}>
         <div className={styles.twoCollapses}>
           <div className={styles.collapseItem}>
-            <CustomCollapse buttonContent="Description" buttonStyle={`${styles.buttonProperty} ${styles.buttonDescription}`}>
+            <CustomCollapse
+              buttonContent="Description"
+              buttonStyle={`${styles.buttonProperty} ${styles.buttonDescription}`}
+              isOpen={activeCollapse === "description"}
+              setIsOpen={() => handleCollapseToggle("description")}
+            >
               <p>{description}</p>
             </CustomCollapse>
           </div>
           <div className={styles.collapseItem}>
-            <CustomCollapse buttonContent="Équipements" buttonStyle={`${styles.buttonProperty} ${styles.buttonEquipments}`}>
+            <CustomCollapse
+              buttonContent="Équipements"
+              buttonStyle={`${styles.buttonProperty} ${styles.buttonEquipments}`}
+              isOpen={activeCollapse === "equipments"}
+              setIsOpen={() => handleCollapseToggle("equipments")}
+            >
               <ul>
                 {equipments.map((item, index) => (
                   <li key={index}>{item}</li>

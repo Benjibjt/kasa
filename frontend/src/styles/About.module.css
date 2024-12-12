@@ -42,10 +42,7 @@
 }
 
 
-/* Optionnel : Ajouter un survol de bouton */
-.aboutcollapse:hover {
-  background-color: #e04f4f; /* Teinte plus foncée au survol */
-}
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

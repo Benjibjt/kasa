@@ -27,6 +27,7 @@
   border-radius: 25px;
 }
 
+
 /* Le cardsContainer a un fond blanc à partir de 768px */
 @media (max-width: 768px) {
   .cardsContainer {
