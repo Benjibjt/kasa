@@ -13,54 +13,6 @@ const Layout = ({ children }) => {
   };
 
   useEffect(() => {
-    const handleGlobalClick = (event) => {
-      // Vérifie si un lien de navigation est cliqué
-      if (event.target.closest("nav a")) {
-        console.log("Lien cliqué, pas d'animation.");
-        return;
-      }
-
-      // Sélectionner les <li> de navigation (les parents des <a>)
-      const navItems = document.querySelectorAll("nav li");
-
-      // Cas lorsque l'on est sur la page Home
-      if (location.pathname === "/") {
-        // Applique la lumière bleue uniquement sur le lien "About"
-        navItems.forEach((item) => {
-          if (item.querySelector("a").getAttribute("href") === "/about") {
-            item.classList.add(styles.flashAnimation);
-            setTimeout(() => item.classList.remove(styles.flashAnimation), 500);
-          }
-        });
-      }
-      // Cas lorsque l'on est sur la page About
-      else if (location.pathname === "/about") {
-        // Applique la lumière bleue uniquement sur le lien "Home"
-        navItems.forEach((item) => {
-          if (item.querySelector("a").getAttribute("href") === "/") {
-            item.classList.add(styles.flashAnimation);
-            setTimeout(() => item.classList.remove(styles.flashAnimation), 500);
-          }
-        });
-      }
-      // Cas pour les autres pages
-      else {
-        // Applique la lumière bleue sur tous les liens
-        navItems.forEach((item) => {
-          item.classList.add(styles.flashAnimation);
-          setTimeout(() => item.classList.remove(styles.flashAnimation), 500);
-        });
-      }
-    };
-
-    document.addEventListener("click", handleGlobalClick);
-
-    return () => {
-      document.removeEventListener("click", handleGlobalClick);
-    };
-  }, [location]); // Réexécuter l'effet chaque fois que location change
-
-  useEffect(() => {
     // Vérifier si la page actuelle est Home ou About
     const navLinks = document.querySelectorAll("nav a");
 
@@ -96,6 +48,8 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+
 
 
 

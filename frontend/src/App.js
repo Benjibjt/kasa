@@ -14,9 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-          {/* Passer un ID pour accéder à un appartement spécifique */}
+          {/* Passez un ID pour accéder à un appartement spécifique */}
           <Route path="/apartment/:id" element={<Apartment />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </PropertiesProvider>
