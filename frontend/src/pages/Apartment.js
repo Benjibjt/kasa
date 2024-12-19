@@ -1,22 +1,20 @@
 import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import CustomCollapse from "../components/CustomCollapse";
-import Carousel from "../components/Carousel"; // Import du composant Carousel
-import styles from "../styles/Apartment.module.css"; // Import du CSS module
-import { PropertiesContext } from "../context/PropertiesProvider"; // Import du contexte
+import Carousel from "../components/Carousel";
+import Rating from "../components/Rating"; // Import du composant Rating
+import styles from "../styles/Apartment.module.css";
+import { PropertiesContext } from "../context/PropertiesProvider";
 import NotFound from './NotFound';
 
 const Apartment = () => {
-  const { id } = useParams(); // Récupère l'ID depuis l'URL
-  const { properties } = useContext(PropertiesContext); // Accède aux propriétés via le contexte
+  const { id } = useParams();
+  const { properties } = useContext(PropertiesContext);
 
-  // Initialisation des hooks
   const [activeCollapse, setActiveCollapse] = useState(null);
 
-  // Trouver les données de l'appartement correspondant
   const apartmentData = properties.find((property) => property.id === id);
 
-  // Gestion si l'appartement n'est pas trouvé
   if (!apartmentData) {
     return <NotFound />;
   }
@@ -38,12 +36,9 @@ const Apartment = () => {
 
   return (
     <div className={styles.container}>
-      {/* Section Carrousel */}
       <div className={styles.carouselContainer}>
         <Carousel images={pictures} />
       </div>
-
-      {/* Informations principales */}
       <div className={styles.mainInfo}>
         <div className={styles.generalInfo}>
           <h1 className={styles.title}>{title}</h1>
@@ -61,25 +56,9 @@ const Apartment = () => {
             <div className={styles.hostName}>{host.name}</div>
             <img src={host.picture} alt={host.name} className={styles.hostImage} />
           </div>
-          {/* Section Rating */}
-          <div className={styles.ratingContainer}>
-            <div className={styles.rating}>
-              {Array(5)
-                .fill()
-                .map((_, index) => (
-                  <img
-                    key={index}
-                    src={index < rating ? '/assets/star-filled.svg' : '/assets/star-empty.svg'}
-                    alt={index < rating ? 'Star filled' : 'Star empty'}
-                    className={index < rating ? styles.starFilled : styles.starEmpty}
-                  />
-                ))}
-            </div>
-          </div>
+          <Rating rating={rating} styles={styles} /> {/* Utilisation du composant Rating */}
         </div>
       </div>
-
-      {/* Sections Description et Équipements */}
       <div className={styles.propertyinfo}>
         <div className={styles.twoCollapses}>
           <div className={styles.collapseItem}>
@@ -113,7 +92,6 @@ const Apartment = () => {
 };
 
 export default Apartment;
-
 
 
 
